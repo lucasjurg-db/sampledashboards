@@ -1,4 +1,9 @@
 {
+  "datasets" : [ {
+    "name" : "43f021fc",
+    "displayName" : "jobs_nyc_postings",
+    "query" : "SELECT * FROM main.jurgensen_x00.jobs_nyc_postings"
+  } ],
   "pages" : [ {
     "name" : "02867e8b",
     "displayName" : "Untitled page",
@@ -12,6 +17,109 @@
         "y" : 0,
         "width" : 6,
         "height" : 2
+      }
+    }, {
+      "widget" : {
+        "name" : "b726aa50",
+        "queries" : [ {
+          "name" : "main_query",
+          "query" : {
+            "datasetName" : "43f021fc",
+            "fields" : [ {
+              "name" : "Salary Range From",
+              "expression" : "`Salary Range From`"
+            }, {
+              "name" : "# Of Positions",
+              "expression" : "`# Of Positions`"
+            } ],
+            "disaggregated" : true
+          }
+        } ],
+        "spec" : {
+          "version" : 3,
+          "widgetType" : "bar",
+          "encodings" : {
+            "x" : {
+              "fieldName" : "Salary Range From",
+              "scale" : {
+                "type" : "quantitative"
+              },
+              "displayName" : "Salary Range From"
+            },
+            "y" : {
+              "fieldName" : "# Of Positions",
+              "scale" : {
+                "type" : "quantitative"
+              },
+              "displayName" : "# Of Positions"
+            }
+          },
+          "frame" : {
+            "title" : "Salary Range Distribution",
+            "showTitle" : true
+          }
+        }
+      },
+      "position" : {
+        "x" : 1,
+        "y" : 2,
+        "width" : 3,
+        "height" : 6
+      }
+    } ]
+  }, {
+    "name" : "e08fae41",
+    "displayName" : "Untitled page 1",
+    "layout" : [ {
+      "widget" : {
+        "name" : "3699a93e",
+        "queries" : [ {
+          "name" : "main_query",
+          "query" : {
+            "datasetName" : "43f021fc",
+            "fields" : [ {
+              "name" : "Agency",
+              "expression" : "`Agency`"
+            }, {
+              "name" : "sum(# Of Positions)",
+              "expression" : "SUM(`# Of Positions`)"
+            } ],
+            "disaggregated" : false
+          }
+        } ],
+        "spec" : {
+          "version" : 3,
+          "widgetType" : "bar",
+          "encodings" : {
+            "x" : {
+              "fieldName" : "Agency",
+              "scale" : {
+                "type" : "categorical",
+                "sort" : {
+                  "by" : "y-reversed"
+                }
+              },
+              "displayName" : "Agency"
+            },
+            "y" : {
+              "fieldName" : "sum(# Of Positions)",
+              "scale" : {
+                "type" : "quantitative"
+              },
+              "displayName" : "Sum of # Of Positions"
+            }
+          },
+          "frame" : {
+            "title" : "Number of Positions by Agency",
+            "showTitle" : true
+          }
+        }
+      },
+      "position" : {
+        "x" : 0,
+        "y" : 0,
+        "width" : 3,
+        "height" : 6
       }
     } ]
   } ]
