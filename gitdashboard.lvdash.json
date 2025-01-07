@@ -61,7 +61,62 @@
         }
       },
       "position" : {
-        "x" : 1,
+        "x" : 0,
+        "y" : 2,
+        "width" : 3,
+        "height" : 6
+      }
+    }, {
+      "widget" : {
+        "name" : "b8eae2bf",
+        "queries" : [ {
+          "name" : "main_query",
+          "query" : {
+            "datasetName" : "43f021fc",
+            "fields" : [ {
+              "name" : "Salary Frequency",
+              "expression" : "`Salary Frequency`"
+            }, {
+              "name" : "sum(# Of Positions)",
+              "expression" : "SUM(`# Of Positions`)"
+            } ],
+            "disaggregated" : false
+          }
+        } ],
+        "spec" : {
+          "version" : 3,
+          "widgetType" : "bar",
+          "encodings" : {
+            "x" : {
+              "fieldName" : "Salary Frequency",
+              "scale" : {
+                "type" : "categorical",
+                "sort" : {
+                  "by" : "y-reversed"
+                }
+              },
+              "displayName" : "Salary Frequency"
+            },
+            "y" : {
+              "fieldName" : "sum(# Of Positions)",
+              "scale" : {
+                "type" : "quantitative"
+              },
+              "displayName" : "Sum of # Of Positions"
+            },
+            "label" : {
+              "show" : true
+            }
+          },
+          "frame" : {
+            "title" : "Salary Frequency Distribution",
+            "showTitle" : true,
+            "showDescription" : true
+          }
+        }
+      },
+      "position" : {
+        "x" : 3,
         "y" : 2,
         "width" : 3,
         "height" : 6
